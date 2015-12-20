@@ -26,7 +26,7 @@ function mentalMathProblem() {
 			16,17,4,7,9,15,20,9,16,8,3,12,11,19,4,13,14,18,6,18,11,7,10,5,15,19,2,17,6,3,14,13,8,5,20,12,2,
 			13,17,18,8,16,9,12,11,14,20,6,15,10,3,19,4,2,5,7); //130  I removed 3 of what were originaly seven 10's for
 										// more consistent play.
-		// import numbers' index from previous funtion call								
+		// import numbers[] index from previous funtion call								
 		var i = lob;
 		if(i > 111){
 			i = 0;
@@ -38,12 +38,13 @@ function mentalMathProblem() {
 			if(b < c || b > f){
 				a = 1;
 			}
-			// We remove the last number and previous answer for good game play and to avoid scenarios such as 7 + 7 - 7.
+			// We remove the last number and previous answer for good game play and to
+			// avoid scenarios such as 7 + 7 - 7.
 			else if(b === last || b === prev){ 
 				a = 1;
 			}
 		} while(a === 1);
-		// save numbers' index for next call
+		// save numbers[] index for next call
 		lob = i;
 		return b;
 	}
@@ -70,7 +71,7 @@ function mentalMathProblem() {
 		var f10 = cplxVars[9]; //first max for multi and div
 		var f11 = cplxVars[10]; //first min for number to be multi or div
 		
-		// decide what operation to execute first. Obviously weighted towards multiplication
+		// decide what operation to execute first.
 		var ch = getRandom(1,5);
 		switch(ch){
 			case 1:
@@ -123,7 +124,7 @@ function mentalMathProblem() {
 		moreComplex();
 	}
 	function moreComplex() {
-		// more general use variables
+		// general use variables for manipulating values
 		var b = 0;
 		var c = 0;
 		var f = 0;
@@ -154,15 +155,18 @@ function mentalMathProblem() {
 		// loop iterates k1 times and each time pushes another string onto prob[] 
 		for(i=0; i < k1; i += 1){
 			q = getRandom(1,2);
-			// If the answer from the last iteration is above k2 and, therefore, within the range where division can 
-			// take place, then we will attempt to divide in multiple ways or else default to addition/subtraction.
-			// Much of the work being done is in order to keep the numbers within the specified ranges for the current
-			// game level.
-			// q is used as a random boolean and so is the value of 'last' because it is always changing. 
+			// If the answer from the last iteration is above k2 and, therefore, 
+			// within the range where division can take place, then we will
+			// attempt to divide in multiple ways or else default to addition/subtraction.
+			// Much of the work being done is in order to keep the numbers within the
+			// specified ranges for the current game level.
+			// q is used as a random boolean and so is the value of 'last'
+			// because it is always changing. 
 			if(answer > k2){ 
 				if((last % 2 === 0) || (d === 0 && i > 1)) {
 					if(answer > 30){
-						// Here, we make sure that the randomly chosen divisor is not to small for the 
+						// Here, we make sure that the randomly chosen
+						// divisor is not to small for the 
 						// number we are going to divide.
 						c = Math.floor(answer / k4);
 						if(c * k4 < answer){
@@ -178,9 +182,10 @@ function mentalMathProblem() {
 					if(answer % h === 0) {
 						t = "divi";
 						}
-					// Else....We now must use information in the variable j (answer mod divisor) to construct
-					// an addition or subtraction problem that will take us to a number that is divisible by h,
-					// the divisor. The addition or subtraction string is pushed onto prob[] imediately, while the division 
+					// We use information in the variable j (answer mod divisor)
+					// to construct an addition or subtraction problem that will take us to a 
+					// number that is divisible by h, the divisor. The addition or subtraction
+					// string is pushed onto prob[] imediately, while the division 
 					// string is passed to the conditional block at the bottom of the function.
 					else if(i !== k1-1){
 						if((answer + (h - j) + h <= k6 && (answer + (h - j) + h) / h <= k4) && ((h - j) + h <= k7 && last !== (h - j) +h)){
@@ -219,7 +224,7 @@ function mentalMathProblem() {
 						t = "minus";
 					}	
 				}
-				// Sometimes, we add or subtract
+				// Sometimes, we add or subtract.
 				else {
 					if(q % 2 === 0){
 						if(answer > k13 && answer <=k5) {
@@ -227,7 +232,8 @@ function mentalMathProblem() {
 							if(c > k7) {
 								c = k7;
 							}
-							// Here, we try to add or subtract larger numbers within the specified range for good play
+							// Here, we try to add or subtract larger numbers within
+							// the specified range for good play
 							if(c - k8 > 5){
 								f = c - 5;
 							}
@@ -282,7 +288,8 @@ function mentalMathProblem() {
 					}
 					else {
 						if(answer <=k5) {
-							// Sometimes we'll take any number from the specified range, even small ones.
+							// Sometimes we'll take any number from the specified range,
+							// even small ones.
 							c = k6-answer;
 							if(c > k7) {
 								c = k7;
@@ -317,8 +324,8 @@ function mentalMathProblem() {
 						if(g > k11) {
 							g = k11;
 						}
-						// Here, we are doing work to tilt the chosen values towards the larger numbers
-						// within the specified range.
+						// Here again, we are doing work to tilt the chosen values 
+						// towards the larger numbers within the specified range.
 						h = g - 3;
 						if(h <= k12){
 							h = k12;
@@ -377,7 +384,8 @@ function mentalMathProblem() {
 				prob.push("multiplied by " + b);
 			}
 		}
-		yourDisplayObject(prob,answer); // When the for loop is finished executing, we output math problem array and the answer
+		yourDisplayObject(prob,answer); // When the for loop is finished executing, we
+						// output math problem array and the answer
 						// to the function of your choice.
 	}
 	first();
