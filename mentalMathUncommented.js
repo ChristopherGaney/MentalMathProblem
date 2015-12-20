@@ -1,12 +1,11 @@
 function mentalMathProblem() {
-	var prob = []; // returned by mentalMathProblem
-	var answer = 0; // returned by mentalMathProblem
-	var last = 0; //last number added, subtracted, multiplied by, or divided by
-	var prev = 0; //previous answer from last iteration
-	var d = 0; //number of division operations
-	var e = 0; //number of multiplication operations
-	var lob = Indx; // var w = new Date(); Indx = w.getSeconds(); Using time in seconds as a random seed for the getRand()
-			// number generator. Declare Indx outside of this function.
+	var prob = []; 
+	var answer = 0; 
+	var last = 0; 
+	var prev = 0; 
+	var d = 0; 
+	var e = 0; 
+	var lob = Indx;
 	
 	function getRandom(min, max) {
 	  return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -19,8 +18,7 @@ function mentalMathProblem() {
 		var numbers = Array(17,13,12,4,7,11,15,14,18,8,3,5,11,2,19,16,3,20,6,16,4,14,12,10,15,9,20,19,17,13,8,18,6,7,2,5,9,
 			15,18,20,2,4,3,9,11,8,17,18,20,8,14,19,7,3,10,5,4,6,9,13,17,16,2,13,14,5,19,12,15,12,7,11,6,16,
 			16,17,4,7,9,15,20,9,16,8,3,12,11,19,4,13,14,18,6,18,11,7,10,5,15,19,2,17,6,3,14,13,8,5,20,12,2,
-			13,17,18,8,16,9,12,11,14,20,6,15,10,3,19,4,2,5,7); //130  I removed 3 of what were originaly seven 10's because 
-										// 10's effect the difficulty level.
+			13,17,18,8,16,9,12,11,14,20,6,15,10,3,19,4,2,5,7); //130  
 		var i = lob;
 		if(i > 111){
 			i = 0;
@@ -48,17 +46,17 @@ function mentalMathProblem() {
 		var g = 0;
 		var m = "";
 		var cplxVars = yourArrayObject();
-		var f1 = cplxVars[0]; //first min random for add
-		var f2 = cplxVars[1]; // first max random for add
-		var f3 = cplxVars[2]; //first min number to add
-		var f4 = cplxVars[3]; //first max for number to add
-		var f5 = cplxVars[4]; // first min for sub
-		var f6 = cplxVars[5]; //first max for sub
-		var f7 = cplxVars[6]; //first min for number to be sub
-		var f8 = cplxVars[7]; //first max for number to be sub
-		var f9 = cplxVars[8]; //first min for multi and div
-		var f10 = cplxVars[9]; //first max for multi and div
-		var f11 = cplxVars[10]; //first min for number to be multi or div
+		var f1 = cplxVars[0]; 
+		var f2 = cplxVars[1]; 
+		var f3 = cplxVars[2]; 
+		var f4 = cplxVars[3]; 
+		var f5 = cplxVars[4]; 
+		var f6 = cplxVars[5]; 
+		var f7 = cplxVars[6]; 
+		var f8 = cplxVars[7]; 
+		var f9 = cplxVars[8]; 
+		var f10 = cplxVars[9]; 
+		var f11 = cplxVars[10]; 
 		
 		var ch = getRandom(1,5);
 		switch(ch){
@@ -123,20 +121,20 @@ function mentalMathProblem() {
 		var l = 0;
 		var t = "";
 		var moreVars = anotherArrayObject();
-		var k1 = moreVars[0]; //number of iterations
-		var k2 = moreVars[1]; //cutoff above which we will first attempt divide
-		var k3 = moreVars[2]; //min for divisor
-		var k4 = moreVars[3]; //max for divisor
-		var k5 = moreVars[4]; //cutoff above which will subtract
-		var k6 = moreVars[5]; //ceiling
-		var k7 = moreVars[6]; //max to be added
-		var k8 = moreVars[7]; //min to be added
-		var k9 = moreVars[8]; //max to be sub
-		var k10 = moreVars[9]; //min to be sub
-		var k11 = moreVars[10]; //max to be multi
-		var k12 = moreVars[11]; //min to be multi
-		var k13 = moreVars[12]; //above which you will add for first add
-		var k14 = moreVars[13]; //below which you will subtract first sub
+		var k1 = moreVars[0]; 
+		var k2 = moreVars[1]; 
+		var k3 = moreVars[2]; 
+		var k4 = moreVars[3]; 
+		var k5 = moreVars[4]; 
+		var k6 = moreVars[5]; 
+		var k7 = moreVars[6]; 
+		var k8 = moreVars[7];
+		var k9 = moreVars[8]; 
+		var k10 = moreVars[9]; 
+		var k11 = moreVars[10]; 
+		var k12 = moreVars[11]; 
+		var k13 = moreVars[12]; 
+		var k14 = moreVars[13];
 		var q = 0;
 		
 		for(i=0; i < k1; i += 1){
