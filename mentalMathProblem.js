@@ -1,5 +1,6 @@
-// This function will create 6 strings if you use the starter variables provided at the bottom of the file. The function first() creates one
-// string, and moreComplex() creates the rest using a for loop. I will refer to each string as an iteration whether it was was created
+// This function will create 6 strings if you use the starter variables provided at the bottom of the file. 
+// The function first() creates one string, and moreComplex() creates the rest using a for loop. 
+// I will refer to each string as an iteration whether it was was created
 // by first or moreComplex().
 function mentalMathProblem() {
 	var prob = []; // var prob and var answer are the final output of the function mentalMathProblem. 
@@ -8,8 +9,8 @@ function mentalMathProblem() {
 	var prev = 0; //previous answer from last iteration
 	var d = 0; //number of division operations
 	var e = 0; //number of multiplication operations
-	var lob = Indx; // var w = new Date(); Indx = w.getSeconds(); Using time in seconds as a random seed for the getRand()
-			// number generator. Declare Indx outside of this function.
+	var lob = Indx; // var w = new Date(); Indx = w.getSeconds(); Using time in seconds as a random 
+			// seed for the getRand() number generator. Declare Indx outside of this function.
 	
 	// returns (a,b) inclusive
 	function getRandom(min, max) {
@@ -22,11 +23,12 @@ function mentalMathProblem() {
 		var c = x;
 		var f = y;
 		// 7 arrays [2...20] shuffled.
-		var numbers = Array(17,13,12,4,7,11,15,14,18,8,3,5,11,2,19,16,3,20,6,16,4,14,12,10,15,9,20,19,17,13,8,18,6,7,2,5,9,
-			15,18,20,2,4,3,9,11,8,17,18,20,8,14,19,7,3,10,5,4,6,9,13,17,16,2,13,14,5,19,12,15,12,7,11,6,16,
-			16,17,4,7,9,15,20,9,16,8,3,12,11,19,4,13,14,18,6,18,11,7,10,5,15,19,2,17,6,3,14,13,8,5,20,12,2,
-			13,17,18,8,16,9,12,11,14,20,6,15,10,3,19,4,2,5,7); //130  I removed 3 of what were originaly seven 10's for
-										// more consistent play.
+		var numbers = Array(17,13,12,4,7,11,15,14,18,8,3,5,11,2,19,16,3,20,6,16,4,14,12,10,15,9,20,
+				19,17,13,8,18,6,7,2,5,9,15,18,20,2,4,3,9,11,8,17,18,20,8,14,19,7,3,10,5,4,6,
+				9,13,17,16,2,13,14,5,19,12,15,12,7,11,6,16,16,17,4,7,9,15,20,9,16,8,3,12,11,
+				19,4,13,14,18,6,18,11,7,10,5,15,19,2,17,6,3,14,13,8,5,20,12,2,13,17,18,8,16,9,
+				12,11,14,20,6,15,10,3,19,4,2,5,7); 	// I removed 3 of what were originaly seven 
+									// 10's for more consistent play.
 		// import numbers[] index from previous funtion call								
 		var i = lob;
 		if(i > 111){
@@ -161,15 +163,16 @@ function mentalMathProblem() {
 			// attempt to divide in multiple ways or else default to addition/subtraction.
 			// Much of the work being done in the conditions is to keep the numbers within the
 			// specified ranges for the current game level.
-			// q is used as a random boolean. The var last is also as a random boolean. It works well for that
-			// purpose because it is always changing.
-			// . 
+			// q is used as a random boolean. The var last is also used as a random boolean 
+			// (odd or even). It works well for that purpose because it is always changing.
+			 
 			if(answer > k2){ 
 				if((last % 2 === 0) || (d === 0 && i > 1)) {
 					if(answer > 30){
 						// Here, we make sure that the randomly chosen
 						// divisor is not to small for the 
-						// number we are going to divide (which would result in too large of a quotient).
+						// number we are going to divide (which would result 
+						// in too large of a quotient).
 						c = Math.floor(answer / k4);
 						if(c * k4 < answer){
 							c = c + 1;
@@ -191,7 +194,8 @@ function mentalMathProblem() {
 					// string is pushed onto prob[] imediately, while the division 
 					// string is passed to the conditional block at the bottom of the function.
 					else if(i !== k1-1){
-						if((answer + (h - j) + h <= k6 && (answer + (h - j) + h) / h <= k4) && ((h - j) + h <= k7 && last !== (h - j) +h)){
+						if((answer + (h - j) + h <= k6 && (answer + (h - j) + h) / h <= k4) && 
+							((h - j) + h <= k7 && last !== (h - j) +h)){
 							k = (h - j) +h;
 							answer = answer + k;
 							prob.push("plus " + k);
@@ -205,7 +209,8 @@ function mentalMathProblem() {
 								i += 1;
 								t = "divi";
 						}
-						else if((h-j > j && (answer + h - j) / h <= k4) && (h - j >= k8 && last !== h - j)) {
+						else if((h-j > j && (answer + h - j) / h <= k4) && 
+							(h - j >= k8 && last !== h - j)) {
 								k = h - j;
 								answer = answer + k;
 								prob.push("plus " + k);
@@ -393,7 +398,7 @@ function mentalMathProblem() {
 	}
 	first();
 	Indx = lob;
-} //close coplexproblem()
+} //close complexproblem()
 // You can use these two arrays as inputs to run the function.
 // values for www.mathmataz.com 'The Big Four' level Three: cplxVars(10,30,5,15,15,45,5,12,4,9,4);
 // values for www.mathmataz.com 'The Big Four' level Three: moreVars(5,15,3,9,33,45,15,5,15,5,9,3,25,20);
